@@ -1,5 +1,6 @@
 package wa.security.challenge.business;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ class BusinessServiceTest {
     private UserAuthenticationManager userAuthenticationManager;
     @Autowired
     private BusinessService businessService;
+
+    @BeforeEach
+    void setUp() {
+        SecurityContextHolder.clearContext();
+    }
 
     @Test
     @DisplayName("Test Spring @Autowired injection works")
